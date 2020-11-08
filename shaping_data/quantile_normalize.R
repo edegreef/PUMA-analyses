@@ -22,5 +22,7 @@ qn <- normalize.quantiles(mat)
 #prepping output to save as csv
 library(tidyverse)
 qn_named <- as.data.frame(qn)
+
+#rename columns if desired
 qn_named <- select(qn_named, MODIS_old=V1, MODIS_new=V2)
 write.csv(qn_named,"greenup_QN_87_chunks.csv")
